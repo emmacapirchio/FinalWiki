@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BreakScheduleApp – Technical Specifications</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+<main>
+  <h1>BreakScheduleApp – Technical Specifications</h1>
+
+  <p>
+    This document provides a detailed technical blueprint for the BreakScheduleApp, describing 
+    architecture, data models, APIs, and deployment strategy.
+  </p>
+
+  <h2>System Architecture</h2>
+  <p>
+    Built with <strong>SwiftUI</strong> using an MVVM architecture and integrated with 
+    <strong>CloudKit</strong> for data persistence and real-time synchronization.
+  </p>
+  <ul>
+    <li><strong>Views:</strong> SwiftUI screens for schedule creation, viewing, swaps, and messaging.</li>
+    <li><strong>ViewModels:</strong> State management and business logic (e.g., ScheduleViewModel).</li>
+    <li><strong>Data Layer:</strong> CloudKitManager and AuthManager handle CRUD operations and authentication.</li>
+  </ul>
+
+  <h2>Data Model</h2>
+  <ul>
+    <li><strong>User:</strong> username, role, department, passwordHash, AppleID</li>
+    <li><strong>BreakSchedule:</strong> shiftStart, shiftEnd, employeeName, department, notes, goals</li>
+    <li><strong>Message:</strong> senderID, recipientID, body, timestamp</li>
+  </ul>
+
+  <h2>Integration & APIs</h2>
+  <ul>
+    <li>CloudKit public and private databases for schedules, users, and messages.</li>
+    <li>Apple Push Notification Service for real-time alerts.</li>
+  </ul>
+
+  <h2>Security & Privacy</h2>
+  <ul>
+    <li>All passwords are securely hashed before storage.</li>
+    <li>Role-based permissions restrict access to authorized users.</li>
+    <li>All network traffic uses encrypted HTTPS connections.</li>
+  </ul>
+
+  <h2>Deployment</h2>
+  <p>
+    The app is distributed through <strong>Apple TestFlight</strong> for beta testing.
+    Users provide their Apple ID email to the app owner to be added to the beta group in App Store Connect.
+    Once invited, testers download and update builds through TestFlight.
+  </p>
+
+  <footer>
+    <p><a href="../weeks/week10/week10.2.html">← Back to Week 20 Page</a></p>
+    <p>&copy; 2025 Emma Capirchio</p>
+  </footer>
+</main>
+</body>
+</html>
